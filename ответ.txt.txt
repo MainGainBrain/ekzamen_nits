@@ -1,0 +1,40 @@
+select * from pc
+join applications ap on pc.id = ap.source_pc
+join security_journal sj on pc.vlan_pc = sj.vlan
+where ap.application = 'Mozila Firefox' and ap.session_time = '17:25'
+and sj.discovery_date = '2024-10-10' and sj.vulnerability_id = 'УБИ.041';
+
+С помощью этого запроса я нашёл айди компов, с которых мог произойти взлом: 19, 46, 54
+
+Проверка алиби работников:
+
+select * from employee_report er
+join employees em on er.uid_employee = em.uid
+where em.pc = 19 or em.pc = 46 or em.pc = 54;
+
+Дионисия первую половину дня работала. Говорит, что Август подтвердит
+Проверяем Августа:
+
+select * from employee_report er
+join employees em on er.uid_employee = em.uid
+where em."name" = 'Август';
+
+Он подтвердил, что сидел с Дионисией после обеда во второй половине дня. Дионисия невиновна.
+Алексей говорит, что первую половину дня он писал документацию, а потом с Дианой Требияни сидели в переговорке.
+Проверяем Диану Требияни:
+
+select * from employee_report er
+join employees em on er.uid_employee = em.uid
+where em."name" = 'Диана' and em.surname = 'Требияни';
+
+У неё вот такое алиби: "Первую часть дня я писала код для обучающего курса по Python, а ближе к обеду мне позвонили из десткого сада моего сына, я отпросилась с работы, я забрала ребенка домой и открыла больничный"
+Она во второй половине дня ушла с работы, тоесть на самом деле не была в переговорке. Значит Алексей врёт и значит именно он является злостным злоумышленником.
+Имя я знаю, осталось найти его айпи адрес
+
+select pc.ip_address from employees em
+join pc on em.pc = pc.id
+where em.name = 'Алексей' and em.surname = 'Сафранов';
+
+Итого:
+Имя: Алексей
+Айпи адрес: 10.10.2.26
