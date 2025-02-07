@@ -1,0 +1,5 @@
+    1  git clone https://github.com/StellarLis/Kosolapov.git
+    2  cd Kosolapov
+    3  ls
+    4  history
+    5  history > history.txt
