@@ -1,0 +1,19 @@
+select employees.name, pc.ip_address
+from employees join employee_report on employees.uid = employee_report.uid_employee  
+join pc on employees.pc = pc.id join statuses on employees.status = statuses.id
+join applications on
+pc.id = applications.source_pc join vlan on pc.vlan_pc = vlan.vlan_id join
+security_journal on vlan.vlan_id = security_journal.vlan 
+where applications.application = 'Mozila Firefox' and
+security_journal.vulnerability_id = 'УБИ.041' and
+security_journal.discovery_date = '2024-10-10'and
+statuses.status = 'Работает' and
+applications.session_time = '17:25'
+
+
+select employees.name, employees.surname, employee_report.report from employee_report join employees  on employee_report.uid_employee = employees.uid 
+where employees.name in ('Дионисия', 'Жерард', 'Алексей', 'Август', 'Диана')
+
+
+Ответ:
+Алексей Сафранов

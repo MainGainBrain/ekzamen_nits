@@ -1,0 +1,15 @@
+$ history
+    1  git init
+    2  ls
+    3  git clone --help
+    4  git clone -b Nazarovskaya_branch https://github.com/verona238/ekzamen_nits.git
+    5  ls
+    6  cd examen_nits/
+    7  cd ekzamen_nits/
+    8  ls
+    9  git show-branch
+   10  git log --oneline --all --graph
+   11  ды
+   12  ls
+   13  git add .
+   14  history
