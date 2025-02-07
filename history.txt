@@ -1,0 +1,6 @@
+    1  git clone https://github.com/ItsNikoo/Perminovv
+    2  ls
+    3  cd Perminovv/
+    4  ls
+    5  history
+    6  history >> history.txt

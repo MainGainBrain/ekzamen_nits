@@ -1,0 +1,31 @@
+Ответ: Алексей Сафранов 10.10.2.26
+Но у человека с инициалами Жерард Пардон 10.10.5.52 тоже не сходится алиби, и я не знаю, как их сопоставить.
+У Жерарда не стыкуется только имя, в то время как Алексей был на обеде с человеком, который в отпуске, но которая сказала, что взяла больничный. Выходит, что Диана Требияни (человек, на которого подозреваемый сослался, соврала).
+Итого, у меня два подозреваемых, но Алексей Сафранов мне больше кажется подозреваемым.
+
+
+select * from security_journal sj
+where sj.discovery_date = '2024-10-10' and sj.vulnerability_id = 'УБИ.041'
+
+select * from pc where vlan_pc = 460
+
+select * from applications a where a.session_time = '17:25'
+
+select e."name", e.surname, a.session_time, a.application, a.source_pc, e.status, e.uid  from employees e join applications a on a.source_pc = e.pc
+where a.session_time = '17:25' and e.status != 14
+
+select e."name", e.surname, e.uid, er.report   from employees e join applications a on a.source_pc = e.pc
+join employee_report er on e.uid = er.uid_employee 
+where a.session_time = '17:25' and e.status != 14 
+
+
+select e."name", e.surname, er.report  from employees e 
+join employee_report er on e.uid = er.uid_employee 
+where er.uid_employee = 91290 or er.uid_employee = 756 or er.uid_employee = 10073 or er.uid_employee = 76343
+
+select e."name" , e.surname, p.ip_address from pc p join employees e on p.id = e.pc
+where e."name" = 'Жерард'
+
+
+
+Вот мои Sql запросы
