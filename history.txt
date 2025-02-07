@@ -1,0 +1,16 @@
+    1  git clone --help
+    2  git clone https://github.com/DevWithABrain/Salnikov.git
+    3  ls
+    4  cd Salnikov
+    5  git log
+    6  git log --all
+    7  touch answer.txt
+    8  rm answer.txt
+    9  ls
+   10  git checkout Salnikov_branch
+   11  echo 'Алексей	10.10.2.26' > ans.txt
+   12  cat ans.txt
+   13  nano ans.txt
+   14  cat ans.txt
+   15  git add ans.txt
+   16  history >> history.txt
