@@ -1,0 +1,85 @@
+ОТВЕТ: Алексей 10.10.2.26
+
+SELECT sj.vlan
+from security_journal sj
+where sj.discovery_date = '2024-10-10' and sj.vulnerability_id = 'УБИ.041';
+
+vlan - 460
+
+SELECT p.ip_address, p.id
+from pc p 
+join applications a on p.id = a.source_pc 
+where p.vlan_pc = 460 and a.application = 'Mozila Firefox' and a.session_time = '17:25';
+
+10.10.5.56	19
+10.10.5.52	46
+10.10.2.26	54
+
+SELECT e.pc, e.name, e.uid
+from employees e
+where (e.pc = 19 or e.pc = 46 or e.pc = 54) and e.status = 13;
+
+19	Дионисия	5563
+46	Жерард		3242
+54	Алексей		1223
+
+SELECT er.uid_employee, er.report 
+from employee_report er 
+where (er.uid_employee = 5563 or er.uid_employee = 3242 or er.uid_employee = 1223);
+
+5563	"Первую половину дня я писала код, а после обеда мы с коллегами собрались в учебном классе и обсуждали новый функционал под руководством директора. Мой коллега Август не даст соврать"
+3242	"Весь день разбирал со стажерами упражнения SQL, потом был в кафетерии с Алисой Абрамович и Натаном Христиновичем, а после обеда мы были на совещании у директора"
+1223	"Первую половину дня я занимался редактированием документации нашего отдела, а после обеда мы с Дианой Требияни собрались в переговорке и обсуждали функционал курса по Python, добавляли материалы на нашу шару"
+
+SELECT e.name, e.uid, er.report 
+from employees e 
+join employee_report er on er.uid_employee = e.uid
+where e.name = 'Август';
+
+Август	10073	"Я решал кейсы и писал отчеты, а после обеда был на совещании у директора вместе с Дионисией" -> Дионисия чиста
+
+SELECT e.name, e.uid, er.report 
+from employees e 
+join employee_report er on er.uid_employee = e.uid
+where e.name = 'Алиса' and e.surname = 'Абрамович';
+
+Алиса	91290	"Почти весь день тестировала таргет. А после обеда связалась по видеосвязи с коллегами из филиала в Санкт-Петербурге и обсуждали общие ошибки в тестировании" - И ничего про Жерарда и обед
+
+SELECT e.name, e.uid, er.report 
+from employees e 
+join employee_report er on er.uid_employee = e.uid
+where e.name = 'Натан' and e.surname = 'Христинович';
+
+Натан	756	"Первую половину дня мы писали лекцию по ООП, на обеде был вместе с Агафоном и Алисой, а потом отправились на совещание по новым фичам к директору" - И ничего про Жерарда, но зато упомянул совещание, на котором предположительно был Жерард
+
+SELECT e.name, e.uid, er.report 
+from employees e 
+join employee_report er on er.uid_employee = e.uid
+where e.name = 'Агафон';
+
+Агафона вообще нет - значит мог перепутать с Жерардом
+
+SELECT e.name, e.uid, er.report 
+from employees e 
+join employee_report er on er.uid_employee = e.uid
+where e.name = 'Диана' and e.surname = 'Требияни';
+
+Диана	76343	"Первую часть дня я писала код для обучающего курса по Python, а ближе к обеду мне позвонили из десткого сада моего сына, я отпросилась с работы, я забрала ребенка домой и открыла больничный" -> Алексей не мог быть с Дианой, если она была на больничном
+
+SELECT e.name, e.uid, s.status
+from employees e 
+join statuses s on s.id = e.status
+where e.name = 'Диана' and e.surname = 'Требияни';
+
+Диана	76343	В отпуске - могла оговориться - больничный/отпуск
+
+Тогда раз Дионисия полностью чиста, Жерард был на обеде и на совещании, а Алексей соврал по поводу Python курса с Дианой, которая ушла с работы по семейным делам, тогда Алексей - главный подозреваемый.
+
+ОТВЕТ: Алексей 10.10.2.26
+
+
+
+
+
+
+
