@@ -1,0 +1,31 @@
+Запрос 1.
+select distinct vlan
+from security_journal j
+where vulnerability_id = 'УБИ.041'
+and j.discovery_date = '2024-10-10'
+
+Запрос 2.
+select name, surname, er.report
+from employees e
+left join employee_report er 
+on e.uid = er.uid_employee
+where name = 'Диана'
+
+Запрос 3.
+select name, surname, ip_address, er.report, s.status 
+from employees e
+left join employee_report er 
+on e.uid = er.uid_employee 
+left join statuses s
+on e.status = s.id
+left join pc
+on e.pc = pc.id
+where pc.id in
+(select id from  pc
+union 
+select a.source_pc from applications a 
+where a.application = 'Mozilla Firefox')
+and vlan_pc = 460
+
+Ответ: Алексей Сафранов 10.10.2.26
+Нашли подозреваемых по параметрам. Среди них Алексей - врун.
