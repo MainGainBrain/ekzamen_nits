@@ -1,0 +1,4 @@
+1  git clone git@github.com:ELismosh/Moshenina.git
+    2  git clone https://github.com/Elismosh/Moshenina.git
+    3  git clone --help
+    4  history
