@@ -1,0 +1,10 @@
+--select * from applications where application = 'Mozila Firefox' and session_time = '17:25'
+--select * from security_journal where discovery_date = '2024-10-10' and vulnerability_id = 'УБИ.041'
+--select * from pc where vlan_pc = 460
+--select * from employees where pc in (19, 43, 46, 47, 54)
+--select * from employee_report where uid_employee in (5563, 1285, 3242, 1994, 1223)
+--select * from employees where name = 'Натан' and surname = 'Христинович'
+--select * from employee_report where uid_employee = 756
+--select * from pc where id = 46
+
+--имя = Жерард Пардон, айпи = 10.10.5.52
