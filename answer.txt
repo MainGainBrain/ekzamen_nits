@@ -1,0 +1,22 @@
+Алексей Сафранов 10.10.2.26
+
+select distinct name, surname, ip_address, report
+from employees e join pc on e.pc=pc.id join applications a on pc.id = a.source_pc join vlan v on pc.vlan_pc=v.vlan_id 
+join security_journal sj on v.vlan_id=sj.vlan join statuses s on e.status=s.id join employee_report er on er.uid_employee=e.uid
+where sj.discovery_date = '2024-10-10' and sj.vulnerability_id='УБИ.041' and a.application='Mozila Firefox' and s.status='Работает'
+
+select name, surname, report
+from employees e join employee_report er on er.uid_employee=e.uid
+where name='Диана' and surname = 'Требияни'
+
+select name, surname, report
+from employees e join employee_report er on er.uid_employee=e.uid
+where name='Август'
+
+select name, surname, report
+from employees e join employee_report er on er.uid_employee=e.uid
+where name='Алиса' and surname = 'Абрамович'
+
+select name, surname, report
+from employees e join employee_report er on er.uid_employee=e.uid
+where name='Натан' and surname = 'Христинович'
