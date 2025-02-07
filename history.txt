@@ -1,0 +1,18 @@
+    1  ls
+    2  clear
+    3  git clone --help
+    4  git clone -b Fairushin_branch https://github.com/Kokande/Fairushin.git
+    5  cd Fairushin
+    6  git log
+    7  git --help
+    8  git show --help
+    9  git show trees
+   10  git log --help
+   11  git log --graph --oneline --all
+   12  git clone --bare https://github.com/Kokande/Fairushin.git
+   13  cd Fairushin.git
+   14  git clone -b Fairushin_branch https://github.com/Kokande/Fairushin.git
+   15  cd Fairushin
+   16  git add solution.txt -m sqltask
+   17  git add solution.txt
+   18  history > history.txt
