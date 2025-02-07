@@ -1,0 +1,32 @@
+Богдан Первович
+
+IP - 10.10.4.46
+
+Запросы
+
+select vulnerability_id, vlan
+from security_journal 
+where vulnerability_id like '%УБИ.041%'
+and discovery_date = '2024-10-10
+
+select *
+from pc
+where vlan_pc = 460
+
+select distinct source_pc
+from applications a
+join pc on pc.id = a.source_pc 
+where vlan_pc = 460 and application like '%Mozila Firefox%'
+
+select name, surname, uid
+from employees
+where pc = '54' or pc = '4' or pc = '46'
+or pc = '15' or pc = '39' or pc = '24'
+or pc = '19' or pc = '37' or pc = '1' or pc = '8'
+
+select report, er.uid_employee 
+from employee_report er 
+where er.uid_employee = '10503' or er.uid_employee = '3623' or
+er.uid_employee = '263' or er.uid_employee = '5563' or
+er.uid_employee = '3549' or er.uid_employee = '9624' or
+er.uid_employee = '36335' or er.uid_employee = '3242' or er.uid_employee = '1223'
