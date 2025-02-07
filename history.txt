@@ -1,0 +1,15 @@
+    1  cd dir
+    2  ls
+    3  cd C:\Users\student1\Desktop\dir
+    4  cd 'C:\Users\student1\Desktop\dir'
+    5  git clone -b Muradyan_fork 'https://github.com/lunahobi/Muradyan.git'
+    6  git clone -b Muradyan_branch 'https://github.com/lunahobi/Muradyan.git'
+    7  git config --global.user.name 'Lusine'
+    8  git config global --help
+    9  cd
+   10  ls
+   11  cd Dekstop/dir
+   12  cd 'C:\Users\student1\Desktop\dir\Muradyan'
+   13  git config --global user.name 'Lusine'
+   14  git config --global user.email muradyan.lusine.05@mail.ru
+   15  history
