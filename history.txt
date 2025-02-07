@@ -1,0 +1,8 @@
+    1  git clone https://github.com/gh-RekRul-gh/ekzamen_nits.git
+    2  git clone https://github.com/gh-RekRul-gh/ekzamen_nits.git
+    3  git clone https://github.com/gh-RekRul-gh/ekzamen_nits.git
+    4  git clone https://github.com/gh-RekRul-gh/ekzamen_nits.git
+    5  ls
+    6  cd ekzamen_nits/
+    7  ls
+    8  history > history.txt
