@@ -1,0 +1,26 @@
+Алексей	10.10.2.26
+
+SELECT discovery_date, vlan,  vulnerability_id
+FROM security_journal
+WHERE discovery_date = '2024-10-10' and vulnerability_id = 'УБИ.041'
+
+
+SELECT *
+FROM pc inner join applications on pc.id = applications.source_pc
+where vlan_pc = 460 and application = 'Mozila Firefox' and session_time like '%17:25%'
+
+select *
+from employees 
+where pc in (SELECT pc.id
+FROM pc inner join applications on pc.id = applications.source_pc
+where vlan_pc = 460 and application = 'Mozila Firefox' and session_time like '%17:25%') and status = 13
+
+select name, surname, pc, report
+from employees inner join employee_report on employees.uid = employee_report.uid_employee
+where (pc in (SELECT pc.id
+FROM pc inner join applications on pc.id = applications.source_pc
+where vlan_pc = 460 and application = 'Mozila Firefox' and session_time like '%17:25%') and status = 13) or name IN ('Август', 'Алиса', 'Натан','Диана');
+
+select name, ip_address
+from employees inner join pc on employees.pc = pc.id
+where name = 'Алексей' and surname = 'Сафранов'
